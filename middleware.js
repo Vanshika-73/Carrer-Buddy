@@ -8,12 +8,12 @@ const isProtectedRoute = createRouteMatcher([
   "/ai-cover-letter(.*)",
   "/onboarding(.*)",
 ]);
+const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
-  const { userId } = await auth();
+  const { userId,redirectToSignIn } = await auth();
 
   if (!userId && isProtectedRoute(req)) {
-    const { redirectToSignIn } = await auth();
     return redirectToSignIn();
   }
 

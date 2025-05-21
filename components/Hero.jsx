@@ -56,7 +56,7 @@ function HeroSection() {
                         <Image
                             src={'/banner.jpeg'}
                             width={1000}
-                            height={720}
+                            height={600}
                             alt='Banner Career Buddy'
                             className='rounded-lg shadow-2xl border mx-auto ' priority />
                     </div>
