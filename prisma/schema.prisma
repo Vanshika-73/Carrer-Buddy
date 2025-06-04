@@ -20,8 +20,8 @@ model User {
   email         String    @unique
   name          String?
   imageUrl      String?
-  SubIndustry      String?    //  subindustry (e.g., "software-development")
-  SubIndustryInsight SubIndustryInsight? @relation(fields: [SubIndustry], references: [SubIndustry])
+  subIndustry      String?    //  subindustry (e.g., "software-development")
+  subIndustryInsight SubIndustryInsight? @relation(fields: [subIndustry], references: [subIndustry])
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
@@ -77,7 +77,7 @@ model Assessment {
 
 model SubIndustryInsight {
   id            String    @id @default(cuid())
-  SubIndustry      String    @unique  // The industry this data belongs to (e.g., "software-development")
+  subIndustry      String    @unique  // The industry this data belongs to (e.g., "software-development")
   
   // Users in this industry
   users         User[]
@@ -100,5 +100,5 @@ model SubIndustryInsight {
   lastUpdated   DateTime  @default(now())
   nextUpdate    DateTime  // Scheduled update time
 
-  @@index([SubIndustry])
+  @@index([subIndustry])
 }

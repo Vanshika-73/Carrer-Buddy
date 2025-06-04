@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </section>
       {/*testimonials  */}
-      <section className="w-full py-12 md:py-24 bg-muted/50">
+      {/* <section className="w-full py-12 md:py-24 bg-muted/50">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracting-tighter text-center mb-12">What Our Users Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto ">{testimonial.map((item, index) => {
@@ -122,9 +122,9 @@ export default function Home() {
             )
           })}</div>
         </div>
-      </section>
+      </section> */}
       {/* Faq */}
-      <section className="w-full py-12 md:py-24 bg-background">
+      <section className="w-full py-12 md:py-24 bg-muted/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>

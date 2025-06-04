@@ -29,9 +29,9 @@ const Header = async() =>  {
           <Image
             src={"/logo.png"}
             alt="Sensai Logo"
-            width={200}
+            width={300}
             height={60}
-            className="h-12 py-1 w-auto object-contain"
+            className="h-12 py-1 w-auto object-contain rounded-40"
           />
         </Link>
 
@@ -41,7 +41,7 @@ const Header = async() =>  {
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="hidden md:inline-flex items-center gap-2"
+                className="hidden md:inline-flex items-center gap-2 cursor-pointer"
               >
                 <LayoutDashboard className="h-4 w-4" />
                 Industry Insights

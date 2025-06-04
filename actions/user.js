@@ -1,66 +1,58 @@
 "use server";
 
 import { db } from "@/lib/prisma";
-import { auth } from "@clerk/nextjs/server";
+import { auth, clerkClient } from "@clerk/nextjs/server";
+import { generateAiInsights } from "./dashboard";
 
 export async function updateUser(data) {
     const { userId } = await auth();
     if (!userId) throw new Error("Unauthorized");
 
-    const user = await db.user.findUnique({
+    const user = await db.User.findUnique({
         where: {
             clerkUserId: userId
         }
     })
-    console.log("user",user);
     if (!user) throw new Error("User not found");
 
     try {
         const result = db.$transaction(
             async (tx) => {
                 // First check if industry exists
-                let subIndustryInsight = await tx.subIndustryInsight.findUnique({
+                let subIndustryInsight = await tx.SubIndustryInsight.findUnique({
                     where: {
-                        SubIndustry: data.SubIndustry
+                        subIndustry: data.subIndustry
                     }
                 });
-    console.log("subII1",subIndustryInsight);
                 // If industry doesn't exist, create it with default values
                 if (!subIndustryInsight) {
-                    const insights = await generateAIInsights(data.SubIndustry);
-                    subIndustryInsight = await tx.subIndustryInsight.create({
+                    const insights = await generateAiInsights(data.subIndustry);
+
+                    subIndustryInsight = await db.SubIndustryInsight.create({
                         data: {
-                            SubIndustry: data.SubIndustry,
-                            salaryRanges:[],
-                            growthRate:0,
-                            demandLevel:"Medium",
-                            topSkills:[],
-                            marketOutlook:"Neutral",
-                            keyTrends:[],
-                            recommendedSkills:[],
+                            subIndustry: data.subIndustry,
+                            ...insights,
                             nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
                         },
                     });
-    console.log("subII2",subIndustryInsight);
                 }
                 // Now update the user
-                const updatedUser = await tx.user.update({
-                    where:{
-                        id:user.id
+                const updatedUser = await tx.User.update({
+                    where: {
+                        id: user.id
                     },
-                    data:{
-                        subIndustry:data.subIndustry,
-                        experience:data.experience,
-                        bio:data.bio,
-                        skills:data.skills,
+                    data: {
+                        subIndustry: data.subIndustry,
+                        experience: data.experience,
+                        bio: data.bio,
+                        skills: data.skills,
                     }
-                })
-                console.log("updatedUSE",updateUser)
-                return {updatedUser,subIndustryInsight}
+                });
+                return { updatedUser, subIndustryInsight };
             }, {
             timeout: 10000
         })
-        return result.user;
+        return { success: true, ...result }
     } catch (error) {
         console.log("Error in updating user while onboarding", error.message);
         throw new Error("Failed to update User Profile");
@@ -69,28 +61,35 @@ export async function updateUser(data) {
 
 
 
-
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export async function userOnboardingStatus() {
-     const { userId } = await auth();
+    const { userId } = await auth();
+    console.log("userId", userId)
     if (!userId) throw new Error("Unauthorized");
-    const user = await db.user.findUnique({
+    const user = await db.User.findUnique({
         where: {
             clerkUserId: userId
         }
-    })
-    if (!user) throw new Error("User not found");
+    });
+
+    if (!user) {
+        throw new Error("User not found after retry");
+    }
+
     try {
-        const user  = await db.user.findUnique({
-            where:{
-                clerkUserId:userId
+        const userSend = await db.User.findUnique({
+            where: {
+                clerkUserId: userId
             },
-            select:{
-                SubIndustry:true
+            select: {
+                subIndustry: true
             }
         });
-        return{
-            isOnboarded : !!user?.SubIndustry
+        return {
+            isOnboarded: !!userSend?.subIndustry
         }
     } catch (error) {
         console.log("Error in checkingOnboarding Status", error.message);
