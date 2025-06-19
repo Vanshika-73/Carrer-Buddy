@@ -122,7 +122,12 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative">
+          
           <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-8 py-4 text-sm font-bold text-white mb-12 shadow-2xl">
+              <CheckCircle className="w-5 h-5 text-green-400" />
+              <span>Join 50,000+ Career Champions</span>
+            </div>
             <h2 className="text-5xl md:text-6xl font-black  gradient-title mb-8 leading-tight">
               Your Journey to
               <br />
@@ -169,7 +174,7 @@ export default function Home() {
   
 
       {/* CTA Section - Cosmic Design */}
-      <section className="py-32 bg-muted/50 relative overflow-hidden">
+      {/* <section className="py-32 bg-muted/50 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -177,7 +182,7 @@ export default function Home() {
         </div>
 
         {/* Floating elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rotate-45 animate-bounce delay-300"></div>
           <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-bounce delay-700"></div>
           <div className="absolute bottom-1/3 left-1/5 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-400 rotate-12 animate-bounce delay-1000"></div>
@@ -204,9 +209,9 @@ export default function Home() {
               Your extraordinary career transformation begins with a single click.
               <br />
               <span className="text-muted-foreground font-medium">Are you ready to become legendary?</span>
-            </p>
+            </p> */}
 
-            <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-8 justify-center">
               <Link href="/dashboard">
                 <Button
                   size="lg"
@@ -216,14 +221,14 @@ export default function Home() {
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Button>
               </Link>
-            </div>
+            </div> */}
 
-            <div className="mt-16 text-muted-foreground text-sm">
+            {/* <div className="mt-16 text-muted-foreground text-sm">
               ✨ No credit card required • 7-day free trial • Cancel anytime
             </div>
           </div>
         </div>
-      </section>
+      </section> */} 
     </div>
   )
 }
