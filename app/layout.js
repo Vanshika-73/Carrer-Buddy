@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { dark } from "@clerk/themes";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,9 +37,7 @@ export default function RootLayout({ children }) {
             <Toaster richColors />
 
             <footer className="bg-muted/50 py-12">
-              <div className="container mx-auto px-4 text-center text-gray-200">
-                <p>Made with 💗 by Vanshika</p>
-              </div>
+              <Footer/>
             </footer>
           </ThemeProvider>
         </body>
