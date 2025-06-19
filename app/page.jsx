@@ -63,7 +63,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Features Section - Artistic Cards */}
-      <section className="py-32 bg-gradient-to-br bg-muted/30  relative">
+      {/* <section className="py-32 bg-gradient-to-br bg-muted/30  relative">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"></div>
@@ -112,7 +112,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Process Section - Creative Flow */}
       <section className="py-20 md:py-32 bg-gradient-to-br bg-background relative overflow-hidden">
@@ -166,59 +166,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section - Floating Cards */}
-      {/* <section className="py-32 bg-gradient-to-br from-purple-50 via-white to-pink-50 relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-pink-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-
-        <div className="container mx-auto px-4 md:px-6 relative">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
-              Success Stories That
-              <br />
-              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-                Inspire Dreams
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-700 rounded-[3rem] blur-2xl scale-110 from-purple-400 to-pink-400"></div>
-
-                <div className="relative bg-white rounded-[3rem] p-12 shadow-2xl hover:shadow-3xl transition-all duration-700 border border-gray-100 group-hover:-translate-y-4">
-                  <div className="flex items-center mb-8">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-
-                  <Quote className="w-12 h-12 text-purple-200 mb-6" />
-                  <p className="text-gray-700 text-xl leading-relaxed mb-8 font-medium">"{testimonial.content}"</p>
-
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={`w-16 h-16 ${testimonial.avatar} rounded-2xl flex items-center justify-center text-white font-bold text-xl`}
-                    >
-                      {testimonial.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                    <div>
-                      <div className="font-black text-gray-900 text-lg">{testimonial.name}</div>
-                      <div className="text-gray-600 font-medium">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+  
 
       {/* CTA Section - Cosmic Design */}
       <section className="py-32 bg-muted/50 relative overflow-hidden">
