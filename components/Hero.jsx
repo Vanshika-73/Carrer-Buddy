@@ -44,10 +44,10 @@ function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-10 mt-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-7 mt-24">
           {/* Left Content */}
           <div className="space-y-10">
-            <div className="space-y-5 px-5">
+            <div className="space-y-3 px-5">
               <h1 className="text-6xl md:text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight">
                 <span className="block gradient-title text-center md:text-left  ">Your</span>
                 <span className="block bg-gradient-to-r text-center md:text-left gradient-title  animate-gradient">
@@ -60,9 +60,12 @@ function HeroSection() {
                 Unlock your potential with AI-powered career coaching that adapts to your unique journey and accelerates
                 your success.
               </p>
+            <div className=" text-muted-foreground text-sm text-center md:text-left">
+              ✨ No credit card required • 7-day free trial • Cancel anytime
             </div>
+            </div>
+            <div className="flex  sm:flex-row gap-6 px-5  justify-center md:justify-start items-center  ">
 
-            <div className="flex flex-col sm:flex-row gap-6 px-5">
               <Link href="/dashboard">
                 <Button
                   size="lg"
@@ -76,7 +79,7 @@ function HeroSection() {
 
             </div>
 
-            <div className="flex items-center gap-12 pt-8 px-5">
+            <div className="flex justify-center md:justify-start items-center gap-12 pt-3 px-5">
               {/* <div className="text-center">
                 <div className="text-3xl font-black text-white mb-1">50K+</div>
                 <div className="text-sm text-gray-400 font-medium">Career Transformations</div>

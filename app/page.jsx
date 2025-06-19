@@ -137,7 +137,7 @@ export default function Home() {
 
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-12">
-              {processSteps.map((step, index) => (
+              {coreFeatures.map((step, index) => (
                 <div key={index} className="relative group">
                   {/* Connecting line */}
                   {index < processSteps.length - 1 && (
@@ -148,11 +148,11 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-700 rounded-[3rem] blur-2xl scale-110 from-purple-400 to-pink-400"></div>
 
                     <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-[3rem] p-10 group-hover:bg-white/10 transition-all duration-500 group-hover:-translate-y-2">
-                      <div
-                        className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center mb-8 shadow-2xl text-white group-hover:scale-110 transition-transform duration-500`}
-                      >
-                        {step.icon}
-                      </div>
+                     <div
+                    className={`w-24 h-24 rounded-3xl bg-gradient-to-r ${step.gradient} flex items-center justify-center mb-8 shadow-2xl group-hover:scale-110 transition-transform duration-500`}
+                  >
+                    {step.icon}
+                  </div>
 
                       <div className="text-6xl font-black text-white/10 mb-4">{step.number}</div>
                       <h3 className="text-3xl font-black text-white mb-6">{step.title}</h3>
