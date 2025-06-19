@@ -57,7 +57,7 @@ export const getIndustryInsights = async () => {
         const insights = await generateAiInsights(user.subIndustry);
         const subIndustryInsight = await db.SubIndustryInsight.create({
             data: {
-                subIdustry: user.subIdustry,
+                subIdustry: user.subIndustry,
                 ...insights,
                 nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
             },

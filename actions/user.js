@@ -4,6 +4,19 @@ import { db } from "@/lib/prisma";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import { generateAiInsights } from "./dashboard";
 
+export async function UserSubIndustry() {
+    const { userId } = await auth();
+    if (!userId) throw new Error("Unauthorized");
+
+    const user = await db.User.findUnique({
+        where: {
+            clerkUserId: userId
+        }
+    })
+    if (!user) throw new Error("User not found");
+    return user.subIndustry;
+}
+
 export async function updateUser(data) {
     const { userId } = await auth();
     if (!userId) throw new Error("Unauthorized");
@@ -67,7 +80,6 @@ function sleep(ms) {
 
 export async function userOnboardingStatus() {
     const { userId } = await auth();
-    console.log("userId", userId)
     if (!userId) throw new Error("Unauthorized");
     const user = await db.User.findUnique({
         where: {

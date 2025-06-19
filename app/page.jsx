@@ -1,168 +1,235 @@
-import HeroSection from "@/components/Hero";
-import { features } from "@/data/features";
+import HeroSection from "@/components/Hero"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { howItWorks } from "@/data/howItWorks";
-import { testimonial } from "@/data/testimonial";
-import Image from "next/image";
-import { faqs } from "@/data/faqs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+  ArrowRight,
+  FileText,
+  PenBox,
+  GraduationCap,
+  Target,
+  BarChart3,
+  Users,
+  TrendingUp,
+  Clock,
+  Award,
+  CheckCircle,
+  Zap,
+  Brain,
+  Shield,
+} from "lucide-react"
+import { features } from "@/data/features"
+import { howItWorks } from "@/data/howItWorks"
+import { faqs } from "@/data/faqs"
+
 
 export default function Home() {
   return (
     <div>
       <div className="grid-background"></div>
       <HeroSection />
-      {/* features */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracting-tighter text-center mb-12">Powerful Features for Your Career Growth</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto ">{features.map((feature, index) => {
-            return (
-              <Card className=' border-2 hover:border-primary transition-colors duration-300 ' key={index}>
-                <CardContent className='pt-6 text-center flex flex-col items-center'>
-                  <div className="flex flex-col items-center justify-center">{feature.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
 
-            )
-          })}</div>
-        </div>
-      </section>
-
-      {/*  */}
-      <section className="w-full py-12 md:py-24 bg-muted/50">
+      {/* Features Section - Enhanced Grid Layout */}
+      <section className="w-full py-20 md:py-32 lg:py-40 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-16">
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <h3 className="text-4xl font-bold">50+</h3>
-              <p className="text-muted-foreground">Industries Covered</p>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <h3 className="text-4xl font-bold">1000+</h3>
-              <p className="text-muted-foreground">Interview Questions</p>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <h3 className="text-4xl font-bold">95%</h3>
-              <p className="text-muted-foreground">Success rate</p>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <h3 className="text-4xl font-bold">24/7</h3>
-              <p className="text-muted-foreground">AI Support</p>
-            </div>
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">
+              Powerful Features for Your Career Growth
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Everything you need to accelerate your professional journey with cutting-edge AI technology
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* steps how it works */}
-      <section className="w-full py-12 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4">How It Works?</h2>
-            <p className=" text-center mt-4 text-muted-foreground">Four Simple Steps to Accelerate your Career</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-16">{howItWorks.map((item, index) => {
-            return (
-              <div key={index} className="flex flex-col items-center space-y-4">
-                <div className="w-16 h-16  rounded-full  bg-primary/10 flex items-center justify-center">
-                  {item.icon}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {features.map((feature, index) => (
+              <Card
+                className="border-2 hover:border-primary transition-colors duration-300 group relative overflow-hidden"
+                key={index}
+              >
+                <div className="absolute top-4 right-4 text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                  {feature.highlight}
                 </div>
-                <h3 className="font-semibold text-xl">{item.title}</h3>
-                <p className="text-muted-foreground text-center">{item.description}</p>
-              </div>
-            )
-          })}</div>
-        </div>
-      </section>
-      {/*testimonials  */}
-      {/* <section className="w-full py-12 md:py-24 bg-muted/50">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracting-tighter text-center mb-12">What Our Users Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto ">{testimonial.map((item, index) => {
-            return (
-              <Card className='bg-background' key={index}>
-                <CardContent className=''>
-                  <div className="flex flex-col space-y-4">
-                    <div className="flex items-center justify-left space-x-3">
-                      <div className="relative flex-shrink-0">
-                        <Image className="rounded-full object-cover border-2 border-primary/20" src={item.image} height={50} width={50} alt={item.author} />
-                      </div>
-                      <div className="flex flex-col items-start">
-                        <h3 className="text-bold text-l font-semibold">{item.author}</h3>
-                        <p className=" text-sm text-muted-foreground">{item.role}</p>
-                        <h6 className="text-sm text-primary">{item.company}</h6>
-                      </div>
-                    </div>
-                    <blockquote>
-                      <p className="text-muted-foreground italic relative">
-                        <span className="text-3xl text-primary absolute -top-4 -left-4">
-                          &quot;
-                        </span>
-                        {item.quote}
-                        <span className="text-3xl text-primary absolute -bottom-4">
-                          &quot;
-                        </span>
-                      </p>
-                    </blockquote>
+                <CardHeader className="">
+                  <div className="w-16 h-16 bg-muted rounded-2xl flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-300">
+                    {feature.icon}
                   </div>
+                  <CardTitle className="text-2xl mb-1">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            )
-          })}</div>
+      {/* Stats Section - Redesigned Layout */}
+      {/* <section className="w-full py-20 md:py-32 bg-muted/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by Professionals Worldwide</h2>
+            <p className="text-lg text-muted-foreground">Join thousands who have accelerated their careers</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <div className="text-center space-y-4">
+              <div className="w-20 h-20 bg-background rounded-3xl flex items-center justify-center shadow-sm mx-auto">
+                <Users className="h-10 w-10" />
+              </div>
+              <div>
+                <h3 className="text-4xl md:text-5xl font-bold mb-1">10K+</h3>
+                <p className="text-muted-foreground font-medium">Active Users</p>
+              </div>
+            </div>
+
+            <div className="text-center space-y-4">
+              <div className="w-20 h-20 bg-background rounded-3xl flex items-center justify-center shadow-sm mx-auto">
+                <TrendingUp className="h-10 w-10" />
+              </div>
+              <div>
+                <h3 className="text-4xl md:text-5xl font-bold mb-1">95%</h3>
+                <p className="text-muted-foreground font-medium">Success Rate</p>
+              </div>
+            </div>
+
+            <div className="text-center space-y-4">
+              <div className="w-20 h-20 bg-background rounded-3xl flex items-center justify-center shadow-sm mx-auto">
+                <Clock className="h-10 w-10" />
+              </div>
+              <div>
+                <h3 className="text-4xl md:text-5xl font-bold mb-1">24/7</h3>
+                <p className="text-muted-foreground font-medium">AI Support</p>
+              </div>
+            </div>
+
+            <div className="text-center space-y-4">
+              <div className="w-20 h-20 bg-background rounded-3xl flex items-center justify-center shadow-sm mx-auto">
+                <Award className="h-10 w-10" />
+              </div>
+              <div>
+                <h3 className="text-4xl md:text-5xl font-bold mb-1">1000+</h3>
+                <p className="text-muted-foreground font-medium">Interview Questions</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section> */}
-      {/* Faq */}
-      <section className="w-full py-12 md:py-24 bg-muted/50">
+
+      {/* How it works section - Enhanced Timeline Layout */}
+      <section className="w-full  bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className=" text-center mt-4 text-muted-foreground">Find answers to common questions about our Platform</p>
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">How It Works</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Four simple steps to transform your career journey with AI-powered guidance
+            </p>
           </div>
-            <div className=" max-w-2xl mx-auto mt-16 p-3">
-          <Accordion type="single" collapsible>
-              {faqs.map((faq, index) => {
-              return (
-                <AccordionItem value={`item-${index}`} key={index}>
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {howItWorks.map((item, index) => (
+                <div key={index} className="relative">
+                  {/* Connection Line for Desktop */}
+                  {index < howItWorks.length - 1 && (
+                    <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-border transform translate-x-4 z-0" />
+                  )}
+
+                  <div className="relative z-10 text-center space-y-6">
+                    <div className="relative mx-auto w-fit">
+                      <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-lg">
+                        {item.icon}
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold border-2 border-background">
+                        {item.step}
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h3 className="font-bold text-xl">{item.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Enhanced Accordion Layout */}
+      <section className="w-full py-20 md:py-32 bg-muted/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Find answers to common questions about our AI-powered career platform
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-6">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  value={`item-${index}`}
+                  key={index}
+                  className="border-2 rounded-xl px-6 bg-background shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-6 text-lg">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
-
-              )
-            })}
-          </Accordion>
-            </div>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </section>
-      {/* last section before footer */}
-      <section className="w-full ">
-        <div className="mx-auto py-24 gradient rounded-lg">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl">Readt to accelerate your Career?</h2>
-            <p className="mx-auto max-w-[600px] text-center mt-4 md:text-xl text-primary-foreground/80">Join thousands of professionals who are advancing their careers with AI-powered guidance.</p>
-            <Link href={'/dashboard'} passHref>
-            <Button size={'lg'} variant={'secondary'} className='h-11 mt-5 animate-bounce duration-100'>
-              Start Your Journey today <ArrowRight className="ml-2 h-4 w-4"/>
-            </Button>
-            </Link>
+
+      {/* Final CTA section - Enhanced Layout */}
+      <section className="w-full py-20 md:py-32">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="gradient rounded-3xl p-12 md:p-16 lg:p-20 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-transparent"></div>
+
+              <div className="relative z-10 space-y-8">
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <CheckCircle className="w-6 h-6 text-primary-foreground" />
+                  <span className="text-lg font-semibold text-primary-foreground">Join 10,000+ Professionals</span>
+                </div>
+
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-primary-foreground leading-tight">
+                  Ready to accelerate your Career?
+                </h2>
+
+                <p className="mx-auto max-w-3xl text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
+                  Join thousands of professionals who are advancing their careers with AI-powered guidance and
+                  personalized coaching.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                  <Link href={"/dashboard"}>
+                    <Button
+                      size={"lg"}
+                      variant={"secondary"}
+                      className="px-10 py-6 text-lg font-semibold min-w-[220px]"
+                    >
+                      Start Your Journey Today
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
+                 
+                </div>
+              </div>
+            </div>
           </div>
-            
         </div>
       </section>
     </div>
   )
 }
-

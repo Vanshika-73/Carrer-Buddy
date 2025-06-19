@@ -29,7 +29,7 @@ const OnboardingPage = () => {
         }, 1000);
       }
     };
-
+    router.refresh();
     checkOnboardingStatus();
   }, [router]);
 

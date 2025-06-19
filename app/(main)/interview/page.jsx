@@ -1,8 +1,19 @@
+import { getAssesments } from '@/actions/interview'
 import React from 'react'
+import StatsCard from './_components/StatsCard'
+import QuizList from './_components/quizList'
 
-const  interviewPage =() => {
+const  interviewPage = async() => {
+  const assessments = await getAssesments();
   return (
-    <div>interviewPage</div>
+    <div>
+      <h1 className='text-5xl font-bold gradient-title mb-5'>Interview Preparations</h1>
+      
+      <div>
+        <StatsCard assessments={assessments}/>
+        <QuizList assessments={assessments}/>
+      </div>
+    </div>
   )
 }
 
