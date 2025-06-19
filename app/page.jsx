@@ -1,155 +1,162 @@
 import HeroSection from "@/components/Hero"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import {
-  ArrowRight,
-  FileText,
-  PenBox,
-  GraduationCap,
-  Target,
-  BarChart3,
-  Users,
-  TrendingUp,
-  Clock,
-  Award,
-  CheckCircle,
-  Zap,
-  Brain,
-  Shield,
-} from "lucide-react"
-import { features } from "@/data/features"
-import { howItWorks } from "@/data/howItWorks"
-import { faqs } from "@/data/faqs"
+import { ArrowRight, Brain, Target, Zap, CheckCircle, Star, Quote, Sparkles, Crown, Rocket } from "lucide-react"
+
+const coreFeatures = [
+  {
+    icon: <Brain className="h-16 w-16 text-white" />,
+    title: "AI Brain",
+    description:
+      "Advanced algorithms that understand your unique career DNA and create personalized growth strategies.",
+    gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
+    shape: "rounded-[2rem] rotate-3",
+    delay: "0ms",
+  },
+  {
+    icon: <Target className="h-16 w-16 text-white" />,
+    title: "Precision Targeting",
+    description: "Laser-focused interview prep with AI-generated scenarios tailored to your dream companies.",
+    gradient: "from-blue-500 via-cyan-500 to-teal-500",
+    shape: "rounded-[2rem] -rotate-2",
+    delay: "200ms",
+  },
+  {
+    icon: <Zap className="h-16 w-16 text-white" />,
+    title: "Lightning Growth",
+    description: "Accelerate your career trajectory with data-driven insights and real-time market intelligence.",
+    gradient: "from-pink-500 via-rose-500 to-orange-500",
+    shape: "rounded-[2rem] rotate-1",
+    delay: "400ms",
+  },
+]
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Dream Big",
+    description: "Share your wildest career aspirations with our AI",
+    icon: <Sparkles className="w-8 h-8" />,
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    number: "02",
+    title: "AI Magic",
+    description: "Watch as AI crafts your personalized success blueprint",
+    icon: <Crown className="w-8 h-8" />,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    number: "03",
+    title: "Launch Forward",
+    description: "Execute your plan and soar to new career heights",
+    icon: <Rocket className="w-8 h-8" />,
+    color: "from-pink-500 to-orange-500",
+  },
+]
+
 
 
 export default function Home() {
   return (
-    <div>
-      <div className="grid-background"></div>
+    <div className="overflow-hidden">
       <HeroSection />
 
-      {/* Features Section - Enhanced Grid Layout */}
-      <section className="w-full py-20 md:py-32 lg:py-40 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">
-              Powerful Features for Your Career Growth
+      {/* Features Section - Artistic Cards */}
+      <section className="py-32 bg-gradient-to-br bg-muted/30  relative">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-6 relative">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r  border border-purple-200 rounded-full px-6 py-3 text-sm font-bold ">
+              <Sparkles className="w-4 h-4" />
+              Powered by Advanced AI
+            </div>
+            <h2 className="text-5xl md:text-6xl gradient-title mb-8 leading-tight">
+              Three Pillars of
+              <br />
+              <span className="bg-gradient-to-r  gradient-title ">
+                Career Mastery
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Everything you need to accelerate your professional journey with cutting-edge AI technology
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Experience the future of career development with our revolutionary AI-powered platform
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
-              <Card
-                className="border-2 hover:border-primary transition-colors duration-300 group relative overflow-hidden"
-                key={index}
-              >
-                <div className="absolute top-4 right-4 text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
-                  {feature.highlight}
-                </div>
-                <CardHeader className="">
-                  <div className="w-16 h-16 bg-muted rounded-2xl flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-300">
+          <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+            {coreFeatures.map((feature, index) => (
+              <div key={index} className="group relative" style={{ animationDelay: feature.delay }}>
+                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-700 rounded-[3rem] blur-2xl scale-110 from-purple-400 to-pink-400"></div>
+
+                <div
+                  className={`relative bg-white ${feature.shape} p-10 shadow-2xl hover:shadow-3xl transition-all duration-700 border border-gray-100 group-hover:border-gray-200 group-hover:-translate-y-4 group-hover:scale-105`}
+                >
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 rounded-t-[2rem]"></div>
+
+                  <div
+                    className={`w-24 h-24 rounded-3xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-8 shadow-2xl group-hover:scale-110 transition-transform duration-500`}
+                  >
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-2xl mb-1">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
+
+                  <h3 className="text-3xl font-black text-gray-900 mb-6">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">{feature.description}</p>
+
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section - Redesigned Layout */}
-      {/* <section className="w-full py-20 md:py-32 bg-muted/50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by Professionals Worldwide</h2>
-            <p className="text-lg text-muted-foreground">Join thousands who have accelerated their careers</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="text-center space-y-4">
-              <div className="w-20 h-20 bg-background rounded-3xl flex items-center justify-center shadow-sm mx-auto">
-                <Users className="h-10 w-10" />
-              </div>
-              <div>
-                <h3 className="text-4xl md:text-5xl font-bold mb-1">10K+</h3>
-                <p className="text-muted-foreground font-medium">Active Users</p>
-              </div>
-            </div>
-
-            <div className="text-center space-y-4">
-              <div className="w-20 h-20 bg-background rounded-3xl flex items-center justify-center shadow-sm mx-auto">
-                <TrendingUp className="h-10 w-10" />
-              </div>
-              <div>
-                <h3 className="text-4xl md:text-5xl font-bold mb-1">95%</h3>
-                <p className="text-muted-foreground font-medium">Success Rate</p>
-              </div>
-            </div>
-
-            <div className="text-center space-y-4">
-              <div className="w-20 h-20 bg-background rounded-3xl flex items-center justify-center shadow-sm mx-auto">
-                <Clock className="h-10 w-10" />
-              </div>
-              <div>
-                <h3 className="text-4xl md:text-5xl font-bold mb-1">24/7</h3>
-                <p className="text-muted-foreground font-medium">AI Support</p>
-              </div>
-            </div>
-
-            <div className="text-center space-y-4">
-              <div className="w-20 h-20 bg-background rounded-3xl flex items-center justify-center shadow-sm mx-auto">
-                <Award className="h-10 w-10" />
-              </div>
-              <div>
-                <h3 className="text-4xl md:text-5xl font-bold mb-1">1000+</h3>
-                <p className="text-muted-foreground font-medium">Interview Questions</p>
-              </div>
-            </div>
-          </div>
+      {/* Process Section - Creative Flow */}
+      <section className="py-20 md:py-32 bg-gradient-to-br bg-background relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-      </section> */}
 
-      {/* How it works section - Enhanced Timeline Layout */}
-      <section className="w-full  bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">How It Works</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Four simple steps to transform your career journey with AI-powered guidance
+        <div className="container mx-auto px-4 md:px-6 relative">
+          <div className="text-center mb-24">
+            <h2 className="text-5xl md:text-6xl font-black  gradient-title mb-8 leading-tight">
+              Your Journey to
+              <br />
+              <span className=" gradient-title">
+                Greatness
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Three transformative steps that will redefine your professional destiny
             </p>
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {howItWorks.map((item, index) => (
-                <div key={index} className="relative">
-                  {/* Connection Line for Desktop */}
-                  {index < howItWorks.length - 1 && (
-                    <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-border transform translate-x-4 z-0" />
+            <div className="grid md:grid-cols-3 gap-12">
+              {processSteps.map((step, index) => (
+                <div key={index} className="relative group">
+                  {/* Connecting line */}
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-1/2 left-full w-12 h-0.5 bg-gradient-to-r from-purple-400 to-transparent transform -translate-y-1/2 z-10"></div>
                   )}
 
-                  <div className="relative z-10 text-center space-y-6">
-                    <div className="relative mx-auto w-fit">
-                      <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-lg">
-                        {item.icon}
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold border-2 border-background">
-                        {item.step}
-                      </div>
-                    </div>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-700 rounded-[3rem] blur-2xl scale-110 from-purple-400 to-pink-400"></div>
 
-                    <div className="space-y-3">
-                      <h3 className="font-bold text-xl">{item.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-[3rem] p-10 group-hover:bg-white/10 transition-all duration-500 group-hover:-translate-y-2">
+                      <div
+                        className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center mb-8 shadow-2xl text-white group-hover:scale-110 transition-transform duration-500`}
+                      >
+                        {step.icon}
+                      </div>
+
+                      <div className="text-6xl font-black text-white/10 mb-4">{step.number}</div>
+                      <h3 className="text-3xl font-black text-white mb-6">{step.title}</h3>
+                      <p className="text-gray-300 text-lg leading-relaxed">{step.description}</p>
                     </div>
                   </div>
                 </div>
@@ -159,73 +166,112 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section - Enhanced Accordion Layout */}
-      <section className="w-full py-20 md:py-32 bg-muted/50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Find answers to common questions about our AI-powered career platform
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-6">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  value={`item-${index}`}
-                  key={index}
-                  className="border-2 rounded-xl px-6 bg-background shadow-sm hover:shadow-md transition-shadow duration-300"
-                >
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-6 text-lg">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+      {/* Testimonials Section - Floating Cards */}
+      {/* <section className="py-32 bg-gradient-to-br from-purple-50 via-white to-pink-50 relative">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-pink-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-      </section>
 
-      {/* Final CTA section - Enhanced Layout */}
-      <section className="w-full py-20 md:py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="gradient rounded-3xl p-12 md:p-16 lg:p-20 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-transparent"></div>
+        <div className="container mx-auto px-4 md:px-6 relative">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+              Success Stories That
+              <br />
+              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+                Inspire Dreams
+              </span>
+            </h2>
+          </div>
 
-              <div className="relative z-10 space-y-8">
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <CheckCircle className="w-6 h-6 text-primary-foreground" />
-                  <span className="text-lg font-semibold text-primary-foreground">Join 10,000+ Professionals</span>
-                </div>
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-700 rounded-[3rem] blur-2xl scale-110 from-purple-400 to-pink-400"></div>
 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-primary-foreground leading-tight">
-                  Ready to accelerate your Career?
-                </h2>
+                <div className="relative bg-white rounded-[3rem] p-12 shadow-2xl hover:shadow-3xl transition-all duration-700 border border-gray-100 group-hover:-translate-y-4">
+                  <div className="flex items-center mb-8">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
 
-                <p className="mx-auto max-w-3xl text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-                  Join thousands of professionals who are advancing their careers with AI-powered guidance and
-                  personalized coaching.
-                </p>
+                  <Quote className="w-12 h-12 text-purple-200 mb-6" />
+                  <p className="text-gray-700 text-xl leading-relaxed mb-8 font-medium">"{testimonial.content}"</p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-                  <Link href={"/dashboard"}>
-                    <Button
-                      size={"lg"}
-                      variant={"secondary"}
-                      className="px-10 py-6 text-lg font-semibold min-w-[220px]"
+                  <div className="flex items-center gap-4">
+                    <div
+                      className={`w-16 h-16 ${testimonial.avatar} rounded-2xl flex items-center justify-center text-white font-bold text-xl`}
                     >
-                      Start Your Journey Today
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </Link>
-                 
+                      {testimonial.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </div>
+                    <div>
+                      <div className="font-black text-gray-900 text-lg">{testimonial.name}</div>
+                      <div className="text-gray-600 font-medium">{testimonial.role}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* CTA Section - Cosmic Design */}
+      <section className="py-32 bg-muted/50 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        </div>
+
+        {/* Floating elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rotate-45 animate-bounce delay-300"></div>
+          <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-bounce delay-700"></div>
+          <div className="absolute bottom-1/3 left-1/5 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-400 rotate-12 animate-bounce delay-1000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-8 py-4 text-sm font-bold text-white mb-12 shadow-2xl">
+              <CheckCircle className="w-5 h-5 text-green-400" />
+              <span>Join 50,000+ Career Champions</span>
+            </div>
+
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-7 leading-[0.9] tracking-tight">
+              Ready to
+              <br />
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
+                Rewrite
+              </span>
+              <br />
+              Your Story?
+            </h2>
+
+            <p className="text-2xl text-muted-foreground mb-7 max-w-4xl mx-auto leading-relaxed font-light">
+              Your extraordinary career transformation begins with a single click.
+              <br />
+              <span className="text-muted-foreground font-medium">Are you ready to become legendary?</span>
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-8 justify-center">
+              <Link href="/dashboard">
+                <Button
+                  size="lg"
+                  className="group bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 hover:from-purple-600 hover:via-pink-600 hover:to-blue-600 text-white px-12 py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 border-0 hover:scale-105"
+                >
+                  Begin Your Legend
+                  <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="mt-16 text-muted-foreground text-sm">
+              ✨ No credit card required • 7-day free trial • Cancel anytime
             </div>
           </div>
         </div>
