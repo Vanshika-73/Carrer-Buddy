@@ -45,71 +45,70 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --background: rgb(100% 100% 100%);
+  --foreground: rgb(14.1% 12.5% 15.3%);
+  --card: rgb(100% 100% 100%);
+  --card-foreground: rgb(14.1% 12.5% 15.3%);
+  --popover: rgb(100% 100% 100%);
+  --popover-foreground: rgb(14.1% 12.5% 15.3%);
+  --primary: rgb(22.7% 20.1% 25.1%);
+  --primary-foreground: rgb(98.8% 98.8% 99.2%);
+  --secondary: rgb(97.6% 97.6% 98%);
+  --secondary-foreground: rgb(22.7% 20.1% 25.1%);
+  --muted: rgb(97.6% 97.6% 98%);
+  --muted-foreground: rgb(60% 58.8% 62.7%);
+  --accent: rgb(97.6% 97.6% 98%);
+  --accent-foreground: rgb(22.7% 20.1% 25.1%);
+  --destructive: rgb(70.2% 32.9% 28.2%);
+  --border: rgb(94.1% 93.3% 94.9%);
+  --input: rgb(94.1% 93.3% 94.9%);
+  --ring: rgb(75.3% 72.5% 79.2%);
+  --chart-1: rgb(75.3% 52.9% 41.6%);
+  --chart-2: rgb(65.9% 75.3% 70.2%);
+  --chart-3: rgb(44.7% 56.1% 82.4%);
+  --chart-4: rgb(86.7% 76.9% 52.9%);
+  --chart-5: rgb(82.7% 73.3% 56.1%);
+  --sidebar: rgb(98.8% 98.8% 99.2%);
+  --sidebar-foreground: rgb(14.1% 12.5% 15.3%);
+  --sidebar-primary: rgb(22.7% 20.1% 25.1%);
+  --sidebar-primary-foreground: rgb(98.8% 98.8% 99.2%);
+  --sidebar-accent: rgb(97.6% 97.6% 98%);
+  --sidebar-accent-foreground: rgb(22.7% 20.1% 25.1%);
+  --sidebar-border: rgb(94.1% 93.3% 94.9%);
+  --sidebar-ring: rgb(75.3% 72.5% 79.2%);
 }
-
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --background: rgb(4% 6% 14%);
+  --foreground: rgb(98% 98% 98%);
+  --card: rgb(8% 10% 20%);
+  --card-foreground: rgb(98% 98% 98%);
+  --popover: rgb(8% 10% 20%);
+  --popover-foreground: rgb(98% 98% 98%);
+  --primary: rgb(80% 85% 98%);
+  --primary-foreground: rgb(8% 10% 20%);
+  --secondary: rgb(15% 18% 30%);
+  --secondary-foreground: rgb(98% 98% 98%);
+  --muted: rgb(15% 18% 30%);
+  --muted-foreground: rgb(55% 58% 70%);
+  --accent: rgb(15% 18% 30%);
+  --accent-foreground: rgb(98% 98% 98%);
+  --destructive: rgb(80% 35% 29%);
+  --border: rgb(100% 100% 100% / 10%);
+  --input: rgb(100% 100% 100% / 15%);
+  --ring: rgb(40% 45% 70%);
+  --chart-1: rgb(30% 40% 80%); /* Blue */
+  --chart-2: rgb(50% 75% 60%); /* Teal */
+  --chart-3: rgb(75% 70% 40%); /* Gold */
+  --chart-4: rgb(50% 50% 85%); /* Soft purple */
+  --chart-5: rgb(70% 45% 45%); /* Muted red */
+  --sidebar: rgb(8% 10% 20%);
+  --sidebar-foreground: rgb(98% 98% 98%);
+  --sidebar-primary: rgb(30% 40% 80%);
+  --sidebar-primary-foreground: rgb(98% 98% 98%);
+  --sidebar-accent: rgb(15% 18% 30%);
+  --sidebar-accent-foreground: rgb(98% 98% 98%);
+  --sidebar-border: rgb(100% 100% 100% / 10%);
+  --sidebar-ring: rgb(40% 45% 70%);
 }
 
 @layer base {

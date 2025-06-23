@@ -6,10 +6,10 @@ import QuizList from './_components/quizList'
 const  interviewPage = async() => {
   const assessments = await getAssesments();
   return (
-    <div>
+    <div >
       <h1 className='text-5xl font-bold gradient-title mb-5'>Interview Preparations</h1>
       
-      <div>
+      <div className='space-y-4'>
         <StatsCard assessments={assessments}/>
         <QuizList assessments={assessments}/>
       </div>

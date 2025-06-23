@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { zodResolver } from '@hookform/resolvers/zod';
-import { OnboardingSchema } from '@/lib/userOnboarding';
+import { OnboardingSchema } from '@/lib/userOnboardingSchema';
 import { useRouter } from 'next/navigation';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';

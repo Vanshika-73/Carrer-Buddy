@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="bg-muted/40">
       <div className="container mx-auto px-4 py-12">
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 mx-10">
@@ -17,7 +17,7 @@ export default function Footer() {
               Empowering professionals with AI-driven career guidance and personalized coaching to achieve their career
               goals.
             </p>
-            <div className="flex space-x-4 justify-center items-center md:justify-start ">
+            {/* <div className="flex space-x-4 justify-center items-center md:justify-start ">
               <Link
                 href="https://linkedin.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -38,8 +38,8 @@ export default function Footer() {
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
-              </Link>
-            </div>
+              </Link> */}
+            {/* </div> */}
           </div>
 
 
