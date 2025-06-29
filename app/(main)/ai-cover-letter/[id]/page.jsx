@@ -12,7 +12,7 @@ export default async function EditCoverLetterPage({ params }) {
     <div className="container mx-auto py-6">
       <div className="flex flex-col space-y-2">
         <Link href="/ai-cover-letter">
-          <Button variant="link" className="gap-2 pl-0">
+          <Button variant="link" className="gap-2 pl-0 cursor-pointer">
             <ArrowLeft className="h-4 w-4" />
             Back to Cover Letters
           </Button>

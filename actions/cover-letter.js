@@ -40,7 +40,7 @@ export async function generateCoverLetter(data) {
     5. Use proper business letter formatting in markdown
     6. Include specific examples of achievements
     7. Relate candidate's background to job requirements
-    
+    8. start with date
     Format the letter in markdown.
   `;
 
