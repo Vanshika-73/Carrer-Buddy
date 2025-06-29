@@ -27,11 +27,11 @@ const Header = async() =>  {
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
           <Image
-            src={"/logo.png"}
-            alt="Sensai Logo"
+            src={"/logo.jpg"}
+            alt="PrepWise"
             width={300}
             height={60}
-            className="h-12 py-1 w-auto object-contain rounded-40"
+            className="h-[65px] w-[120px] py-1 w-auto object-contain rounded-40"
           />
         </Link>
 

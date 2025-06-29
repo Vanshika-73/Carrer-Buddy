@@ -65,7 +65,30 @@ export async function generateCoverLetter(data) {
     throw new Error("Failed to generate cover letter");
   }
 }
+export async function updateCover({ id, content }) {
+  const { userId } = await auth();
+  if (!userId) throw new Error("Unauthorized");
 
+  if (!id) throw new Error("Cover letter ID is required");
+  if (!content) throw new Error("Cover letter content is required");
+
+  const user = await db.user.findUnique({
+    where: { clerkUserId: userId },
+  });
+
+  if (!user) throw new Error("User not found");
+
+  const result = await db.coverLetter.update({
+    where: {
+      id: id, // ✅ must be a valid coverLetter ID
+    },
+    data: {
+      content,
+    },
+  });
+
+  return { success: true, updated: result };
+}
 export async function getCoverLetters() {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");

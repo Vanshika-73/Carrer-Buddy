@@ -43,10 +43,10 @@ function HeroSection() {
         <div className="absolute bottom-1/3 left-1/5 w-3 h-3 bg-gradient-to-r from-pink-400 to-purple-400 rotate-12 animate-bounce delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mt-6 mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-7 mt-24">
           {/* Left Content */}
-          <div className="space-y-10">
+          <div className="space-y-7">
             <div className="space-y-3 px-5">
               <h1 className="text-6xl md:text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight">
                 <span className="block gradient-title text-center md:text-left  ">Your</span>
@@ -60,9 +60,9 @@ function HeroSection() {
                 Unlock your potential with AI-powered career coaching that adapts to your unique journey and accelerates
                 your success.
               </p>
-            <div className=" text-muted-foreground text-sm text-center md:text-left">
+            {/* <div className=" text-muted-foreground text-sm text-center md:text-left">
               ✨ No credit card required • 7-day free trial • Cancel anytime
-            </div>
+            </div> */}
             </div>
             <div className="flex  sm:flex-row gap-6 px-5  justify-center md:justify-start items-center  ">
 
@@ -79,7 +79,7 @@ function HeroSection() {
 
             </div>
 
-            <div className="flex justify-center md:justify-start items-center gap-12 pt-3 px-5">
+            <div className="flex justify-center md:justify-start items-center gap-12 pt-5 px-5">
               {/* <div className="text-center">
                 <div className="text-3xl font-black text-white mb-1">50K+</div>
                 <div className="text-sm text-gray-400 font-medium">Career Transformations</div>
@@ -103,7 +103,7 @@ function HeroSection() {
 
             <div ref={imageRef} className="relative transform hover:scale-105 transition-transform duration-700">
               <Image
-                src="/banner.jpeg"
+                src="/banner.png"
                 width={600}
                 height={400}
                 alt="AI Career Coach Platform"

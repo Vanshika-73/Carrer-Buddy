@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4 text-center md:text-left">
             <div className="flex items-center space-x-2">
-              <img src="/logo.png" alt="AI Career Coach" className="w-10 h-10" />
+              <img src="/logo.jpg" alt="AI Career Coach" className="w-[110px] h-[70px]" />
               <h3 className="text-lg font-semibold text-foreground">AI Career Coach</h3>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed w-50 md:w-100">
